@@ -54,9 +54,9 @@ function Navbar() {
             <Link href="/" className="block  px-3 py-2 rounded-md text-center font-medium text-white hover:bg-blue-700">
               Home
             </Link>
-            <LInk href="About" className="block px-3 py-2 rounded-md text-center font-medium text-white hover:bg-blue-700">
+            <Link href="About" className="block px-3 py-2 rounded-md text-center font-medium text-white hover:bg-blue-700">
               About
-            </LInk>
+            </Link>
             <Link href="Services" className="block px-3 py-2 rounded-md text-center font-medium text-white hover:bg-blue-700">
               Services
             </Link>

@@ -11,8 +11,7 @@ function Hero() {
         </h1>
         <p className="text-gray-300 text-lg md:text-xl mb-8">
           We specialize in creating beautiful, responsive, and user-friendly web solutions that elevate your business.
-          Let's build something incredible together.
-        </p>
+          Let us build something incredible together.</p>
         <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
           <Link
             href="Services"
