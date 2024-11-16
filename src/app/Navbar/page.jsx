@@ -3,8 +3,7 @@
 import Link from 'next/link';
 import React, { useState } from 'react';
 import { FaBars, FaTimes} from 'react-icons/fa';
-import Image from 'next/image';
-import logo from '../assets/newlogo.jpg'
+
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
