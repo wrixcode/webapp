@@ -19,12 +19,8 @@ function Navbar() {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <Link href="/" className=" ">
-            <Image className=' w-60'
-      src={logo}
-    
-      alt="Picture of the author"
-    />
-              
+     
+              <h1 className='text-3xl md:text-5xl '>wrixcode</h1>
             </Link>
           </div>
           <div className="hidden md:flex space-x-6">
