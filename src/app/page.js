@@ -6,6 +6,7 @@ import Services from './Services/page'
 
 import Contact from './Contact/page'
 
+
 const page = () => {
   return (
     <div>
@@ -14,6 +15,7 @@ const page = () => {
       <About/>
       <Services/>
       <Contact/>
+      
     </div>
   )
 }

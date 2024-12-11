@@ -1,68 +1,58 @@
-// src/components/Navbar.jsx
 'use client'
 import Link from 'next/link';
-import React, { useState } from 'react';
-import { FaBars, FaTimes} from 'react-icons/fa';
+import React, { useEffect, useState } from 'react'
 
-
-function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
-
-  return (
-    <nav className="bg-[#101125]  fixed top-0 text-white shadow-md w-full">
-      <div className=" px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <div className="flex items-center">
-            <Link href="/" className=" ">
+import { FaBars, FaTimes } from 'react-icons/fa';
+const Navbar = () => {
+  const [open, setOpen] = useState(false);
+  useEffect(() => {
+    if(open){
+     document.body.style.overflow=('hidden')
+    }else{
+     document.body.style.overflow=('auto')
+ 
+    }
+ 
+   
+     return () => {
+       document.body.style.overflow=('auto')
      
-              <h1 className='text-3xl md:text-5xl '>wrixcode</h1>
-            </Link>
-          </div>
-          <div className="hidden md:flex space-x-6">
-            <Link href="/" className="hover:text-gray-300 flex items-center">
-             Home
-            </Link>
-            <Link href="About" className="hover:text-gray-300 flex items-center">
-             About
-            </Link>
-            <Link href="Services" className="hover:text-gray-300 flex items-center">
-             Services
-            </Link>
-            <Link href="Contact" className="hover:text-gray-300 flex items-center">
-             Contact
-            </Link>
-          </div>
-          <div className="md:hidden">
-            <button onClick={toggleMenu} className="text-white">
-              {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
-            </button>
-          </div>
-        </div>
-      </div>
-      {isOpen && (
-        <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <Link href="/" className="block  px-3 py-2 rounded-md text-center font-medium text-white hover:bg-blue-700">
-              Home
-            </Link>
-            <Link href="About" className="block px-3 py-2 rounded-md text-center font-medium text-white hover:bg-blue-700">
-              About
-            </Link>
-            <Link href="Services" className="block px-3 py-2 rounded-md text-center font-medium text-white hover:bg-blue-700">
-              Services
-            </Link>
-            <Link href="Contact" className="block px-3 py-2 rounded-md text-center font-medium text-white hover:bg-blue-700">
-              Contact
-            </Link>
-          </div>
-        </div>
-      )}
-    </nav>
-  );
+     };
+   }, [open]);
+   
+  return (
+    <div className='absolute w-full top-0 left-0  z-10'>
+        <div className='container flex px-6 md:px-20 lg:px-28  py-4 justify-between items-center ' >
+<h1  className='text-white text-3xl md:text-4xl'>wrix code</h1>
+<ul className='hidden md:flex gap-8'>
+    <Link  href="/" className='cursor-pointer hover:text-gray-400 text-white'>Home</Link>
+    <Link  href="About" className='cursor-pointer hover:text-gray-400 text-white'>About</Link>
+    <Link  href="Services" className='cursor-pointer hover:text-gray-400 text-white'>Service</Link>
+    <Link  href="Contact" className='cursor-pointer hover:text-gray-400 text-white'>Contact</Link>
+</ul>
+
+<FaBars className='md:hidden text-white' onClick={() => setOpen(true)}/>
+
+
+  </div>
+  {/* mobile-screen   */}
+  <div className={`md:hidden  top-0 overflow-hidden ${open ? 'w-full fixed' : 'w-0 h-0'} right-0 transition-all bottom-0  bg-white  `}>
+
+    <div className='flex justify-end p-6 cursor-pointer'>
+<FaTimes className='w-7 text-black' onClick={() => setOpen(false)}/>
+     
+    </div>
+    <ul className='flex  flex-col gap-4 it font-medium items-center text-lg '>
+      <Link href="/"  onClick={() => setOpen(false)}  className=''>Home</Link>
+      <Link href="About"  onClick={() => setOpen(false)}  className=''>About</Link>
+      <Link href="Service"  onClick={() => setOpen(false)}  className=''>Service</Link>
+      <Link href="Contact"  onClick={() => setOpen(false)}  className=''>Contact</Link>
+    </ul>
+ 
+</div>
+        
+</div>
+  )
 }
 
-export default Navbar;
+export default Navbar
