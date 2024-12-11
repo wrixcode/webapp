@@ -45,7 +45,7 @@ const Navbar = () => {
     <ul className='flex  flex-col gap-4 it font-medium items-center text-lg '>
       <Link href="/"  onClick={() => setOpen(false)}  className=''>Home</Link>
       <Link href="About"  onClick={() => setOpen(false)}  className=''>About</Link>
-      <Link href="Service"  onClick={() => setOpen(false)}  className=''>Service</Link>
+      <Link href="Services"  onClick={() => setOpen(false)}  className=''>Service</Link>
       <Link href="Contact"  onClick={() => setOpen(false)}  className=''>Contact</Link>
     </ul>
  
