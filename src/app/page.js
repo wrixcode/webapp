@@ -5,12 +5,14 @@ import About from './About/page'
 import Services from './Services/page'
 
 import Contact from './Contact/page'
-
+import { ToastContainer } from 'react-toastify'
 
 const page = () => {
   return (
     <div>
+      <ToastContainer/>
       <Navbar/>
+      
       <Hero/>
       <About/>
       <Services/>
