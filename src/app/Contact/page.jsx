@@ -1,9 +1,9 @@
 'use client'
-import React from 'react'
+import React from 'react';
 import { toast } from 'react-toastify';
 
 const Contact = () => {
-  const [result, setResult] = React.useState("send message");
+  const [result, setResult] = React.useState("");
 
   const onSubmit = async (event) => {
     event.preventDefault();
